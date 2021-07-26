@@ -7,7 +7,7 @@ LOG = py_logging.getLogger(__name__)
 CONF = cfg.CONF
 DOMAIN = "demo"
 
-
+logging.tempest_set_log_file("app.log")
 def prepare():
     """Prepare Oslo Logging (2 or 3 steps)
 
@@ -56,7 +56,7 @@ def prepare():
     LOG.info("=" * 80)
 
     # Required setup based on configuration and domain
-    logging.tempest_set_log_file("app.log")
+    
     logging.setup(CONF, DOMAIN)
 
 
